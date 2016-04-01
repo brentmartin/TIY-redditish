@@ -6,15 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-id = 0
-10.times do |id|
-  link_title = Faker::Company.catch_phrase
-              + " "
-              + ["has found", "is the original","meets","has gone","went","shocked by","is the new","made the","killed the"].sample
-              + " "
-              + Faker::Hipster.word
-  Link.create(title: link_title,
+10.times do |n|
+  link_title = [
+    Faker::Company.catch_phrase,
+    ["has found", "is the original","meets","has gone","went","shocked by","is the new","made the","killed the"].sample,
+    Faker::Hipster.word,
+  ].join(" ")
+  link = Link.create(title: link_title,
               URL: Faker::Hacker.adjective+Faker::Hacker.noun+".com")
-  id = id + 1
-  Vote.create(link_id: id)
+  Vote.create(link_id: link.id)
 end

@@ -9,7 +9,7 @@
 <% @links.each do |link| %>
   <h4>
     <%= link.title %>
-    <%= link.URL %>
+    <%= link_to link.URL, link.converted_url %>
   </h4>
 
 <% end %>

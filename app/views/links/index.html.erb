@@ -8,6 +8,8 @@
 
 <% @links.each do |link| %>
   <h4>
+    <%= link.vote_counter %>
+    <%= link_to "upvote", "/votes?link_id=#{link.id}", method: "POST" %>
     <%= link.title %>
     <%= link_to link.URL, link.converted_url %>
   </h4>

@@ -1,0 +1,29 @@
+
+
+<div class='row'>
+  <div class='twelve columns'>
+
+    <% @link.errors.full_messages.each do |msg| %>
+      <p class='form-error'> <%= msg %> </p>
+    <% end %>
+
+    <%= form_for(@link) do |t| %>
+      <div class='row'>
+        <div class='three columns'>
+          <%= t.label :title %>
+          <%= t.text_field :title, class: 'input-field title', placeholder: "Enter stuffz here" %>
+        </div>
+
+        <div class='three columns'>
+          <%= t.label :URL %>
+          <%= t.text_field :URL, class: 'input-field URL', placeholder: "putz webz here" %>
+        </div>
+
+        </div>
+      </div>
+      <div class='row'>
+        <%= t.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -34,13 +34,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # For styling
 gem 'bourbon'
-gem 'neat', '~> 1.7', '>= 1.7.4'
+gem 'neat'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry-rails'
   gem 'faker'
+  gem 'refills'
 end
 
 group :development do

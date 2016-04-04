@@ -1,17 +1,28 @@
-<h1>Reddit Feed <small>Lets get Reddity</small></h1>
 
-<%= hello_header %>
 
-  <p>
-    Redditz
-  </p>
 
-<% @links.each do |link| %>
-  <h4>
-    <%= link.vote_counter %>
-    <%= link_to "upvote", "/votes?link_id=#{link.id}", method: "POST" %>
-    <%= link.title %>
-    <%= link_to link.URL, link.converted_url %>
-  </h4>
+<section>
+      <h1>Iron Reddit</h1>
+  <aside>
 
-<% end %>
+  </aside>
+  <article>
+    <% @links.each do |link| %>
+
+      <p class="counter">
+        <%= link.vote_counter %>
+      </p>
+      <p class="upvote">
+        <%= link_to "⇧", "/votes?link_id=#{link.id}", method: "POST" %>
+      </p>
+      <p class="title">
+        <%= link.title %>
+      </p>
+      <p class="link">
+        <%= link_to link.URL, link.converted_url %>
+      </br>
+      </p>
+
+    <% end %>
+  </article>
+</section>

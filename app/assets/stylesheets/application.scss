@@ -12,6 +12,54 @@
  *
  */
 
+/* Font's included */
+ @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300,500,700,500italic,300italic);
+
+/* Bourbon base */
  @import "bourbon";
- @import "home";
- @import "users";
+
+/* Include 'neat' (depends on   '@import "bourbon";'   as well) */
+ @import "neat";
+
+body {
+  background-color: #414141;
+  h1 {
+    font-family: 'Roboto Mono', ;
+    font-weight: 100;
+    color: #DD6964;
+  }
+}
+
+ section {
+   @include outer-container;
+   aside { @include span-columns(1); }
+   article { @include span-columns(10); }
+   h1 {
+     font-size: 48px;
+     margin: 0;
+   }
+   p {
+     display: inline;
+     font-family: 'Roboto Mono', ;
+     font-weight: 300;
+     font-size: 12px;
+     color: white;
+     line-height: 0;
+   }
+   p.link a {
+     text-decoration: none;
+     color: #7EAAC7;
+   }
+
+   p.upvote a {
+     text-decoration: none;
+     color: #B4CA73;
+   }
+
+   p.upvote:hover a { color: #DD6964;}
+
+   p.link:hover { font-weight: 700;}
+
+   a {text-decoration: none;}
+
+ }

@@ -1,29 +1,34 @@
 
+<% @link.errors.full_messages.each do |msg| %>
+  <p class='form-error'> <%= msg %> </p>
+<% end %>
 
-<div class='row'>
-  <div class='twelve columns'>
 
-    <% @link.errors.full_messages.each do |msg| %>
-      <p class='form-error'> <%= msg %> </p>
-    <% end %>
+<section class="create_new">
+  <aside>
 
+  </aside>
+  <article>
     <%= form_for(@link) do |t| %>
-      <div class='row'>
-        <div class='three columns'>
-          <%= t.label :title %>
-          <%= t.text_field :title, class: 'input-field title', placeholder: "Enter stuffz here" %>
+      <div>
+
+        <p class ="status_line">
+          Brent$/day-4/assignments/redditish
         </div>
 
-        <div class='three columns'>
-          <%= t.label :URL %>
-          <%= t.text_field :URL, class: 'input-field URL', placeholder: "putz webz here" %>
+        <div class ="title_field">
+          <%= t.text_field :title, class: 'input-field title', placeholder: "say thing" %>
         </div>
 
+        <div class ="url_field">
+          <%= t.text_field :URL, class: 'input-field URL', placeholder: "exampleurl.com" %>
         </div>
+
       </div>
-      <div class='row'>
+
+      <div class="submit_button">
         <%= t.submit %>
       </div>
     <% end %>
-  </div>
-</div>
+  </article>
+</section>

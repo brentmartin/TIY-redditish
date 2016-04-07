@@ -6,9 +6,6 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    # render locals: {
-    #   school: School.new
-    # }
   end
 
   def create

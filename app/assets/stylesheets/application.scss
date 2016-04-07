@@ -63,3 +63,30 @@ body {
    a {text-decoration: none;}
 
  }
+
+ section.create_new {
+   @include outer-container;
+   aside { @include span-columns(1); }
+   article { @include span-columns(10); }
+   background-color: #414141;
+
+   .title_field, .url_field, .submit_button {
+     display: inline;
+   }
+
+   .title_field {
+     background-color: #414141;
+     color: #414141;
+
+   }
+
+   .url_field {
+
+   }
+
+   .submit_button{
+
+   }
+
+
+ }

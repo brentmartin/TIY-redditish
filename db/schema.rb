@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160331224609) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "links", force: :cascade do |t|
     t.string "title", null: false
     t.string "URL",   null: false
@@ -22,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160331224609) do
     t.integer "link_id"
   end
 
-  add_index "votes", ["link_id"], name: "index_votes_on_link_id"
+  add_index "votes", ["link_id"], name: "index_votes_on_link_id", using: :btree
 
+  add_foreign_key "votes", "links"
 end
